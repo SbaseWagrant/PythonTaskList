@@ -8,11 +8,11 @@ const FormCompoment = ({ item, setItem, setApiData }: propsType) => {
     item &&
       api()
         .post("/", { item })
-        .then((res) => {
+        .then((res:any) => {
           setApiData(res.data);
           console.log(res);
         })
-        .catch((err) => {
+        .catch((err:any) => {
           console.log({ err });
         });
   };

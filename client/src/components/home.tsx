@@ -11,11 +11,11 @@ const Home = () => {
   useEffect(() => {
     api()
       .get("/")
-      .then((res) => {
+      .then((res:any) => {
         setApiData(res.data);
         console.log(res.data);
       })
-      .catch((err) => {
+      .catch((err:any) => {
         console.log({ err });
       });
   }, []);
@@ -23,11 +23,11 @@ const Home = () => {
   const onDelete = (id: number) => {
     api()
       .delete(`/${id}`)
-      .then((res) => {
+      .then((res:any) => {
         setApiData(res.data);
         console.log(res.data);
       })
-      .catch((err) => {
+      .catch((err:any) => {
         console.log({ err });
       });
   };
@@ -36,11 +36,11 @@ const Home = () => {
     item &&
       api()
         .put(`/${id}`, { item })
-        .then((res) => {
+        .then((res:any) => {
           setApiData(res.data);
           console.log(res.data);
         })
-        .catch((err) => {
+        .catch((err:any) => {
           console.log({ err });
         });
   };
